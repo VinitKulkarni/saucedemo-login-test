@@ -2,7 +2,7 @@ name: Daily SauceDemo Login Test
 
 on:
   schedule:
-    - cron: '45 6 * * *'
+    - cron: '53 6 * * *'
 
   workflow_dispatch:
 
