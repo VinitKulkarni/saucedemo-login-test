@@ -17,6 +17,7 @@ public class SauceDemoLoginTest {
 
     @BeforeEach
     public void setup() {
+        System.out.println("========== TEST STARTED ==========");
 
         ChromeOptions options = new ChromeOptions();
 
@@ -29,6 +30,7 @@ public class SauceDemoLoginTest {
 
     @Test
     public void loginTest() {
+        System.out.println("Opening SauceDemo website...");
 
         driver.get("https://www.saucedemo.com/");
 
@@ -51,6 +53,7 @@ public class SauceDemoLoginTest {
 
     @AfterEach
     public void tearDown() {
+         System.out.println("Closing...");
 
         if (driver != null) {
             driver.quit();
