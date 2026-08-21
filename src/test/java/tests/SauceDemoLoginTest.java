@@ -33,7 +33,7 @@ public class SauceDemoLoginTest {
 
         driver.get("https://sarvalinks.com/sign-up/");
         
-        
+        Thread.sleep(3000);
         driver.findElement(By.xpath("//input[@name='firstName']")).sendKeys("TestVinit");
 		driver.findElement(By.xpath("//input[@name='lastName']")).sendKeys("TestKulkarni");
 		driver.findElement(By.xpath("//input[@name='mobileNumber']")).sendKeys("9964384321");
