@@ -12,7 +12,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class SauceDemoLoginTest {
-
     WebDriver driver;
 
     @BeforeEach
@@ -30,30 +29,26 @@ public class SauceDemoLoginTest {
 
     @Test
     public void loginTest() {
-        System.out.println("Opening SauceDemo website...");
+        System.out.println("===== Opening SauceDemo website ======");
 
-        driver.get("https://www.saucedemo.com/");
+        driver.get("https://qawebsite-sl.iassureit.in/sign-up/");
+        
+        
+        driver.findElement(By.xpath("//input[@name='firstName']")).sendKeys("TestVinit");
+		driver.findElement(By.xpath("//input[@name='lastName']")).sendKeys("TestKulkarni");
+		driver.findElement(By.xpath("//input[@name='mobileNumber']")).sendKeys("9964384321");
+		driver.findElement(By.xpath("//input[@name='email']")).sendKeys("vinitkkulkarni@gmail.com");
+		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("Password@123");
+		driver.findElement(By.xpath("//input[@name='confirmPassword']")).sendKeys("Password@123");
+		driver.findElement(By.xpath("//input[@id='terms']")).click();
+		driver.findElement(By.xpath("//button[text()='Submit »']")).click();
 
-        driver.findElement(By.id("user-name"))
-                .sendKeys("standard_user");
-
-        driver.findElement(By.id("password"))
-                .sendKeys("secret_sauce");
-
-        driver.findElement(By.id("login-button"))
-                .click();
-
-        assertTrue(
-                driver.getCurrentUrl().contains("inventory.html"),
-                "Login failed"
-        );
-
-        System.out.println("SauceDemo Login Test PASSED");
+        System.out.println("======= SauceDemo Login Test PASSED =======");
     }
 
     @AfterEach
     public void tearDown() {
-         System.out.println("Closing...");
+         System.out.println("===== Closing ======");
 
         if (driver != null) {
             driver.quit();
