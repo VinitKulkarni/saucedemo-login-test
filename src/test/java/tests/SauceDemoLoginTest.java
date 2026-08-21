@@ -28,7 +28,7 @@ public class SauceDemoLoginTest {
     }
 
     @Test
-    public void loginTest() {
+    public void loginTest() throws InterruptedException {
         System.out.println("===== Opening SauceDemo website ======");
 
         driver.get("https://sarvalinks.com/sign-up/");
@@ -42,6 +42,8 @@ public class SauceDemoLoginTest {
 		driver.findElement(By.xpath("//input[@name='confirmPassword']")).sendKeys("Password@123");
 		driver.findElement(By.xpath("//input[@id='terms']")).click();
 		driver.findElement(By.xpath("//button[text()='Submit »']")).click();
+		Thread.sleep(3000);
+		System.out.println(driver.getCurrentUrl());
 
         System.out.println("======= SauceDemo Login Test PASSED =======");
     }
