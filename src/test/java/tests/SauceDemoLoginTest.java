@@ -31,7 +31,7 @@ public class SauceDemoLoginTest {
     public void loginTest() {
         System.out.println("===== Opening SauceDemo website ======");
 
-        driver.get("https://qawebsite-sl.iassureit.in/sign-up/");
+        driver.get("https://sarvalinks.com/sign-up/");
         
         
         driver.findElement(By.xpath("//input[@name='firstName']")).sendKeys("TestVinit");
